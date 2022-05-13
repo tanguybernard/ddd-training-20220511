@@ -1,6 +1,6 @@
 import DayNumber from "./day-number";
 import { ScheduleId } from "./schedule-id";
-import { Period } from "./period";
+import { Period } from "../../../shared-kernel/utils/date/period";
 import { AggregateRoot } from "../../../shared-kernel/aggregate-root";
 
 export class Schedule extends AggregateRoot<ScheduleId> {

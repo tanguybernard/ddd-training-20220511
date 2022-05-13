@@ -1,6 +1,6 @@
 import DayId from "./day-id";
 import DayNumber from "./day-number";
-import { Period } from "./period";
+import { Period } from "../../../shared-kernel/utils/date/period";
 import { Schedule } from "./schedule";
 import { ScheduleId } from "./schedule-id";
 
