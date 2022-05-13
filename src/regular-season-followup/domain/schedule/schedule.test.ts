@@ -8,8 +8,11 @@ describe(`${Schedule.name}`, () => {
   it("should initiate a new schedule ", () => {
     // Given
     const scheduleId = new ScheduleId(1);
-    const days = new DayNumber(new DayId('2'), []);
-    const period = new Period(new Date(), new Date());
+    const days = new DayNumber(new DayId(2), []);
+    const date = new Date()
+    const startDate = new Date(date.setDate(date.getDate() + 1))
+    const endDate = new Date(date.setDate(date.getDate() + 3))
+    const period = Period.create(startDate, endDate);
 
     // When
     const schedule = Schedule.create(scheduleId, period, [days]);
@@ -18,3 +21,4 @@ describe(`${Schedule.name}`, () => {
     expect(schedule).toBeDefined();
   });
 });
+ 

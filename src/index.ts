@@ -17,6 +17,9 @@ AppDataSource.initialize().then(async () => {
 
 }).catch(error => console.log(error))
 
+//new WrapperSubscriber(configBusBCAdmin)
+//wrapper.listen()
+
 const server =  initServer().listen(PORT, () => {
     console.log(`[${process.env.NODE_ENV}] Server is listening on port ${PORT}`);
 });

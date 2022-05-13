@@ -2,6 +2,7 @@ import DayNumber from "./day-number";
 import { ScheduleId } from "./schedule-id";
 import { Period } from "../../../shared-kernel/utils/date/period";
 import { AggregateRoot } from "../../../shared-kernel/aggregate-root";
+import ScheduleCreatedDomainEvent from "./events/schedule-created-domain-event";
 
 export class Schedule extends AggregateRoot<ScheduleId> {
   private constructor(
@@ -22,6 +23,8 @@ export class Schedule extends AggregateRoot<ScheduleId> {
     if (errors.length > 0) {
       throw new Error(JSON.stringify(errors));
     }
-    return new Schedule(scheduleId, period, days);
+    const scheduleCreated =  new Schedule(scheduleId, period, days);
+    scheduleCreated.record(new ScheduleCreatedDomainEvent(scheduleId, new Date(), 'schedule.created'));
+    return scheduleCreated;
   }
 }

@@ -15,13 +15,18 @@ describe(`${CreateSchedule.name}`, () => {
 
   it('should create a new schedule', () => {
     // Given
-    const days = new DayNumber(new DayId('2'), []);
-    const period = new Period(new Date(), new Date());
+    const days = new DayNumber(new DayId(2), []);
+    const today = new Date()
+    const startDate = new Date(today.setDate(today.getDate() + 1));
+    const endDate = new Date(today.setDate(today.getDate() + 2));
+    const period = Period.create(startDate, endDate);
     
     // When
-    const newSchedule = createScheduleUsecase.create(period, [days])
+    const createdSchedule = createScheduleUsecase.create(period, [days]);
 
     // Then
-    expect(newSchedule).toBeDefined()
+    expect(createdSchedule).toBeDefined();
   })
+
+
 })

@@ -1,8 +1,8 @@
-import { ValueObject } from "../../../shared-kernel/value-object";
+import { ValueObject } from "../../value-object";
 import PeriodException from "./period-exception";
 
 export class Period extends ValueObject<{ startDate: Date; endDate: Date }> {
-  constructor(public readonly startDate: Date, public readonly endDate: Date) {
+  private constructor(public readonly startDate: Date, public readonly endDate: Date) {
     super({ startDate, endDate });
   }
 

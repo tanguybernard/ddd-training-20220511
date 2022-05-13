@@ -4,6 +4,5 @@ import { Schedule } from "./schedule";
 
 export default interface ScheduleRepository{
 
-    create(period: Period, daysNumber: DayNumber[]): Schedule;
-
+    create(period: Period, daysNumber: DayNumber[]): Promise<Schedule>;
 }
