@@ -11,3 +11,7 @@
 ![focus_bc](https://user-images.githubusercontent.com/14818169/194502806-ed8022eb-a62f-4fc9-9ef4-c21a113f5770.jpg)
 
 
+## Hexagonal
+
+![hexa](https://user-images.githubusercontent.com/14818169/194503206-fd7a5dba-9eae-4a0f-b501-136cf5d5f1ff.jpg)
+
